@@ -3,21 +3,23 @@
   <h1 class="text-3xl text-center p-3 text-bold">Miami Store</h1>
   <p class="text-center text-xl text-blue-600 italic">Check out our latest products...</p>
    
-         <div class="grid lg:grid-cols-3 md:grid-cols-2 p-8">
+         <div class="grid lg:grid-cols-3 md:grid-cols-2 p-8 col-container">
              <div v-for="item in list" v-bind:key="item.id">
-              <div class="m-5 text-center border border-pink-400 justify-center rounded shadow post">
-              <img :src="item.thumbnail" class="images"/>
-              <h3 class="text-3xl mt-2">{{item.title}}</h3>
-              <p class="text-2xl mt-2">Brand: {{item.brand}}</p>
-              <p class="text-xl mt-2 m-3">Description: {{item.description}}</p>  
-              <div class="flex justify-around m-5">
-              <p class="text-x">Category: {{item.category}}</p>
-              <p class="text-x">Discount: {{item.discountPercentage}}</p>
-              </div>
-              <div class="flex justify-around m-5">
-              <p class="text-sm">Price: ${{item.price}}</p>
-              <p class="text-sm">Rating: {{item.rating}}</p>   
-              </div>
+              <div class="m-8 text-center border border-pink-400 justify-center rounded shadow box">
+                <div class="child">
+                  <img :src="item.thumbnail" class="images"/>
+                  <h3 class="text-3xl mt-2">{{item.title}}</h3>
+                  <p class="text-2xl mt-2">Brand: {{item.brand}}</p>
+                  <p class="text-xl mt-2 m-3">Description: {{item.description}}</p>  
+                  <div class="flex justify-around m-5">
+                  <p class="text-x">Category: {{item.category}}</p>
+                  <p class="text-x">Discount: {{item.discountPercentage}}</p>
+                  </div>
+                  <div class="flex justify-around m-5">
+                  <p class="text-sm">Price: ${{item.price}}</p>
+                  <p class="text-sm">Rating: {{item.rating}}</p>   
+                  </div>      
+                </div>      
               </div>
              </div>
          </div>   
@@ -62,7 +64,19 @@ font-family: 'Lato', sans-serif;
 .images{
   width: 100%;
   height: auto;
+  display: table-cell;
 }
+
+
+
+/* .col-container {
+  display: table;
+  width: 100%;
+}
+*/
+.box {
+  background: linear-gradient(red,blue);
+} 
 
 
 </style>
